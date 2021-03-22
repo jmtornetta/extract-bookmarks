@@ -7,7 +7,13 @@ Write-Output "Exporting bookmarks as html..."
 invoke-expression -Command $pathExportChrome
 invoke-expression -Command $pathExportEdge
 Write-Output "Emptying bookmarks link directory to recompile..."
-Remove-Item "$PSScriptRoot\bookmarks\*.*"
+if (!(Test-Path "$PSScriptRoot/bookmarks")) {
+    New-Item -itemType Directory -Path $PSScriptRoot -Name "bookmarks"
+    }
+else {
+    Remove-Item "$PSScriptRoot\bookmarks\*.*"
+    }
+
 Write-Output "Extracting links from export files..."
 invoke-expression -Command "cmd /C cscript $pathExtractChrome"
 invoke-expression -Command "cmd /C cscript $pathExtractEdge"
