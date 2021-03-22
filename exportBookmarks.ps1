@@ -1,14 +1,5 @@
-#Instructions: Replace "Profile 2" in $pathToJsonFile with whatever folder is present in your directory
 #Credit1: Mike in IT @ https://community.spiceworks.com/topic/2123065-export-chrome-bookmarks-as-html
 #Credit2: tobibeer and Snak3d0c @ https://stackoverflow.com/questions/47345612/export-chrome-bookmarks-to-csv-file-using-powershell
-#Future: Build search function to find and store path in variable, e.g. $pathToJsonFile = Get-ChildItem -Recurse | Where-Object { $_.FullName -match '[A-Z]\:\\Users\\.*\\AppData\\Local\\Google\\Chrome\\User Data\\(Default|Profile 1|Profile 2)\\Bookmarks' }
-#Param(
-#     [Parameter( Mandatory = $false)]
-#     [string]$adOffice,
-#     [Parameter( Mandatory = $false)]
-#     [string]$adStreetAddress   
-# )
-#$pathToJsonFile = "$env:localappdata\Microsoft\Edge\User Data\Default\Bookmarks"
 param
     (
         [Parameter(Mandatory=$true)] [string] $pathToJsonFile,

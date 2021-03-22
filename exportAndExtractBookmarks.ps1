@@ -2,8 +2,6 @@
 Write-Output "Locating bookmark file paths..."
 $pathEdgeBookmarks = Get-ChildItem -Recurse -Path "$env:localappdata\Microsoft\Edge\User Data\*\Bookmarks"
 $pathChromeBookmarks = Get-ChildItem -Recurse -Path "$env:localappdata\Google\Chrome\User Data\*\Bookmarks"
-#$pathEdgeBookmarks = "$env:localappdata\Microsoft\Edge\User Data\Default\Bookmarks"
-#$pathChromeBookmarks = "$env:localappdata\Google\Chrome\User Data\Profile 2\Bookmarks"
 Write-Output "Exporting bookmarks as html..."
 .\exportBookmarks.ps1 -pathToJsonFile $pathEdgeBookmarks -htmlOut "$PSScriptRoot\bookmarks-edge.html"
 .\exportBookmarks.ps1 -pathToJsonFile $pathChromeBookmarks -htmlOut "$PSScriptRoot\bookmarks-chrome.html"
