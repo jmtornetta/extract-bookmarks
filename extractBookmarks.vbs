@@ -1,6 +1,6 @@
 Const ForReading = 1, ForWriting = 2, ForAppending = 8, CreateIfNeeded = true
 Set objFSO = CreateObject("Scripting.FileSystemObject")
-bookmarkfile = "bookmarks-chrome.html"
+bookmarkfile = "bookmarks-joined.html"
 Set bookmarks = objFSO.OpenTextFile(bookmarkfile, ForReading)
 Set regEx = New RegExp
 regEx.Global = True
@@ -11,7 +11,7 @@ regEx2.Pattern = "[^a-zA-Z0-9-_. ]"
 dim fso, fullPathToBookmarkFile
 set fso = CreateObject("Scripting.FileSystemObject")
 fullPathToBookmarkFile = fso.GetAbsolutePathName(bookmarkfile)
-outpath = Replace(fullPathToBookmarkFile,"\bookmarks-chrome.html","\bookmarks")
+outpath = Replace(fullPathToBookmarkFile,"\bookmarks-joined.html","\bookmarks")
 
 regEx.Pattern = "<DT><A HREF=""(.*)"" ADD_DATE.*>(.*)</A>"
 do until bookmarks.AtEndOfStream
