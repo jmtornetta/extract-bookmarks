@@ -1,7 +1,7 @@
 # instructions
 1. Run "exportAndExtractBookmarks.ps1" via PowerShell
 2. Find exported bookmark links in "bookmarks" folder in this directory. Optionally add this directory to your launcher index.
-3. Extra: import the "ExportAndExtractBookmarks--TaskScheduler.xml" file into Windows Task Scheduler to run this at login and every day at 4PM. Be sure to change the file path in "Arguments" to the filep path of exportAndExtractBookmarks.ps1. Modify as needed.
+3. Extra: Create a Windows Task Scheduler or cron job to run this on a schedule.
 
 # troubleshoot
 ## all links are not appearing
