@@ -60,12 +60,14 @@ ForEach ($entry in $sections) {
 Write-Output "Locating bookmark file paths..."
 $pathEdgeBookmarks = Get-ChildItem -Recurse -Path "$env:localappdata\Microsoft\Edge\User Data\*\Bookmarks"
 $pathChromeBookmarks = Get-ChildItem -Recurse -Path "$env:localappdata\Google\Chrome\User Data\*\Bookmarks"
+$pathBraveBookmarks = Get-ChildItem "$env:localappdata\BraveSoftware\Brave-Browser\User Data\*\Bookmarks"
 Write-Output "Exporting bookmarks as html..."
 exportBookmarks $pathEdgeBookmarks "$PSScriptRoot\bookmarks-edge.html"
 exportBookmarks $pathChromeBookmarks "$PSScriptRoot\bookmarks-chrome.html"
+exportBookmarks $pathBraveBookmarks "$PSScriptRoot\bookmarks-brave.html"
 
 #3: Joining bookmark html files and prepping bookmarks directory
-Get-Content bookmarks-edge.html, bookmarks-chrome.html | Set-Content bookmarks-joined.html
+Get-Content bookmarks-edge.html, bookmarks-chrome.html, bookmarks-brave.html | Set-Content bookmarks-joined.html
 Write-Output "Emptying bookmarks link directory to recompile..."
 if (!(Test-Path "$PSScriptRoot/bookmarks")) {
     New-Item -itemType Directory -Path $PSScriptRoot -Name "bookmarks"
@@ -82,6 +84,7 @@ invoke-expression -Command "cmd /C cscript $PSScriptRoot\extractBookmarks.vbs"
 Write-Output "Cleaning export files..."
 Remove-item "$PSScriptRoot\bookmarks-chrome.html"
 Remove-item "$PSScriptRoot\bookmarks-edge.html"
+Remove-item "$PSScriptRoot\bookmarks-brave.html"
 Remove-item "$PSScriptRoot\bookmarks-joined.html"
 Write-Output "Done! Closing in 10 seconds..."
 Start-Sleep -Seconds 10

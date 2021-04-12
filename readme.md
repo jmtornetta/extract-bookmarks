@@ -16,6 +16,7 @@ Modern broswers do not often export bookmarks into multiple shortcut/link files.
 Exports and extracts bookmarks from Chrome and Edge into a folder that can be easily archived by launchers like Windows Search, Cortana, Launchy, Wox, Everything and PowerToys Run.
 
 # future
-1. Combine export and extract scripts to minimize redundant code and increase speed.
-2. Add support for Firefox by importing and converting "<Drive>:\Users\<Name>\AppData\Roaming\Mozilla\Firefox\Profiles\<edition>-default\bookmarkbackups" into HTML file
-3. Test application with all launcher tools. I have only tested this program with PowerToys Run as it is supported by Microsoft, secure and fairly stable.
+1. Create config file with user-defined variables for the browser user profile name, placeholder "Default"
+2. Combine export and extract scripts to minimize redundant code and increase speed.
+3. Add support for Firefox by importing and converting "<Drive>:\Users\<Name>\AppData\Roaming\Mozilla\Firefox\Profiles\<edition>-default\bookmarkbackups" into HTML file
+4. Test application with all launcher tools. I have only tested this program with PowerToys Run as it is supported by Microsoft, secure and fairly stable.
