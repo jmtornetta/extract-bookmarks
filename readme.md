@@ -17,6 +17,7 @@ Exports and extracts bookmarks from Chrome and Edge into a folder that can be ea
 
 # future
 1. Create config file with user-defined variables for the browser user profile name, placeholder "Default"
+1. Create "if..." statements to prevent error throwing when browser isn't installed. Or just include "true/false" for "Is Broswers Installed?" in config file.
 2. Combine export and extract scripts to minimize redundant code and increase speed.
 3. Add support for Firefox by importing and converting "<Drive>:\Users\<Name>\AppData\Roaming\Mozilla\Firefox\Profiles\<edition>-default\bookmarkbackups" into HTML file
 4. Test application with all launcher tools. I have only tested this program with PowerToys Run as it is supported by Microsoft, secure and fairly stable.
