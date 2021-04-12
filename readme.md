@@ -1,5 +1,5 @@
 # instructions
-1. Run "exportAndExtractBookmarks.ps1" via PowerShell
+1. Run "exportAndExtractBookmarks.ps1" via PowerShell (right click menu)
 2. Find exported bookmark links in "bookmarks" folder in this directory. Optionally add this directory to your launcher index.
 3. Extra: Create a Windows Task Scheduler or cron job to run this on a schedule.
 
@@ -13,7 +13,7 @@
 Modern broswers do not often export bookmarks into multiple shortcut/link files. They instead create a single html export file. While faster, this approach does not allow a user to easily index bookmark files when using launcher tools like the Windows Search, Cortana, Launchy, Wox, Everything and PowerToys Run 
 
 # summary
-Exports and extracts bookmarks from Chrome and Edge into a folder that can be easily archived by launchers like Windows Search, Cortana, Launchy, Wox, Everything and PowerToys Run.
+Exports and extracts bookmarks from Chrome, Brave and Edge into a folder that can be easily archived by launchers like Windows Search, Cortana, Launchy, Wox, Everything and PowerToys Run. Currently, ignore errors thrown by PowerShell for Browsers not installed. Will be fixed in future.
 
 # future
 1. Create config file with user-defined variables for the browser user profile name, placeholder "Default"
